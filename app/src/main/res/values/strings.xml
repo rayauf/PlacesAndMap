@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">App_v2</string>
+    <string name="opString">Abierto de: </string>
+    <string name="clString">a </string>
+    <string name="avCost">Costo promedio: </string>
+    <string name="title_activity_places_detail">Map</string>
+
+    <string name="reviews_button">Reviews</string>
+    <string name="add_review_button">Add Review</string>
+</resources>

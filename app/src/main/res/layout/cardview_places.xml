@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/placeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="96dp"
+            android:layout_marginRight="96dp"
+            android:layout_marginTop="16dp"
+
+            android:text="Dummy"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/openString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/opString"
+            app:layout_constraintStart_toStartOf="@+id/placeName"
+            app:layout_constraintTop_toBottomOf="@+id/placeName" />
+
+        <TextView
+            android:id="@+id/OpHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            android:text="00:00"
+            app:layout_constraintBottom_toBottomOf="@+id/openString"
+            app:layout_constraintStart_toEndOf="@+id/openString" />
+
+        <TextView
+            android:id="@+id/closeString"
+            android:layout_width="6dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
+            android:text="@string/clString"
+            app:layout_constraintBottom_toBottomOf="@+id/OpHour"
+            app:layout_constraintStart_toEndOf="@+id/OpHour" />
+
+        <TextView
+            android:id="@+id/ClHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            android:text="00:00"
+            app:layout_constraintBottom_toBottomOf="@+id/closeString"
+            app:layout_constraintStart_toEndOf="@+id/closeString" />
+
+        <TextView
+            android:id="@+id/avCostString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/avCost"
+            app:layout_constraintStart_toStartOf="@+id/openString"
+            app:layout_constraintTop_toBottomOf="@+id/openString" />
+
+        <TextView
+            android:id="@+id/avCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$00.00"
+            app:layout_constraintBottom_toBottomOf="@+id/avCostString"
+            app:layout_constraintStart_toEndOf="@+id/avCostString" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

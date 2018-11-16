@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/detailName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Dummy"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/openStringDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/opString"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/detailName"
+        app:layout_constraintTop_toBottomOf="@+id/detailName" />
+
+    <TextView
+        android:id="@+id/OpHourDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        android:text="00:00"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/openStringDetail"
+        app:layout_constraintStart_toEndOf="@+id/openStringDetail" />
+
+    <TextView
+        android:id="@+id/closeStringDetail"
+        android:layout_width="6dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginStart="3dp"
+        android:text="@string/clString"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/OpHourDetail"
+        app:layout_constraintStart_toEndOf="@+id/OpHourDetail" />
+
+    <TextView
+        android:id="@+id/ClHourDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        android:text="00:00"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/closeStringDetail"
+        app:layout_constraintStart_toEndOf="@+id/closeStringDetail" />
+
+    <TextView
+        android:id="@+id/avCostStringDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/avCost"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/openStringDetail"
+        app:layout_constraintTop_toBottomOf="@+id/openStringDetail" />
+
+    <TextView
+        android:id="@+id/avCostDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$00.00"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/avCostStringDetail"
+        app:layout_constraintStart_toEndOf="@+id/avCostStringDetail" />
+
+    <include
+        android:id="@+id/map_detail"
+        layout="@layout/activity_places_detail"
+        android:layout_width="245dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reviews_button"
+        app:layout_constraintVertical_bias="0.517"></include>
+
+    <Button
+        android:id="@+id/reviews_button"
+        android:layout_width="95dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="220dp"
+        android:text="@string/reviews_button"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/add_review_button"
+        android:layout_width="95dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/add_review_button"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/reviews_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/reviews_button"
+        app:layout_constraintTop_toTopOf="@+id/reviews_button"
+        app:layout_constraintVertical_bias="1.0" />
+
+</android.support.constraint.ConstraintLayout>
