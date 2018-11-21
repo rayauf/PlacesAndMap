@@ -7,4 +7,6 @@
 
     <string name="reviews_button">Reviews</string>
     <string name="add_review_button">Add Review</string>
+
+    <string name="searchB">Buscar</string>
 </resources>
