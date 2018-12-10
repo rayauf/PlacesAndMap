@@ -8,8 +8,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.rauly.app_v2.Activities.PlacesListView;
 import com.example.rauly.app_v2.Constants.Constants;
+import com.example.rauly.app_v2.Fragments.PlacesDisplayFrag;
 import com.example.rauly.app_v2.Models.Places;
 
 import org.json.JSONArray;
@@ -28,7 +28,7 @@ public class PlacesDataService {
     private PlacesDataService() {
     }
     //Request all places---------------------------------------------------------------------------------------------------------------------------
-    public ArrayList<Places> getAllPlaces(Context context, final PlacesListView.placesDL listener){
+    public ArrayList<Places> getAllPlaces(Context context, final PlacesDisplayFrag.placesDL listener){
         String url = Constants.GET_ALL_PLACES;
 
         final ArrayList<Places> placesList = new ArrayList<>();

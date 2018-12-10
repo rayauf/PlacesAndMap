@@ -4,6 +4,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.rauly.app_v2.Fragments.PlacesDisplayFrag;
 import com.example.rauly.app_v2.Models.Places;
 import com.example.rauly.app_v2.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -30,7 +31,7 @@ public class PlacesDetail extends FragmentActivity implements OnMapReadyCallback
         placeOpenH = (TextView) findViewById(R.id.OpHourDetail);
         placeCloseH = (TextView) findViewById(R.id.ClHourDetail);
 
-        place = getIntent().getParcelableExtra(PlacesListView.EXTRA_ITEM_PLACE);
+        place = getIntent().getParcelableExtra(PlacesDisplayFrag.EXTRA_ITEM_PLACE);
         updateUI();
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
