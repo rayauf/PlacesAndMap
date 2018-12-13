@@ -20,13 +20,13 @@
             android:icon="@drawable/ic_search_black_24dp"
             android:title="Buscar"></item>
         <item
-            android:id="@+id/nav_info"
-            android:icon="@drawable/ic_info_black_24dp"
-            android:title="Info"></item>
-        <item
             android:id="@+id/nav_rec"
             android:icon="@drawable/ic_favorite_black_24dp"
             android:title="Recomendaciones"></item>
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="Info"></item>
 
     </group>
 </menu>

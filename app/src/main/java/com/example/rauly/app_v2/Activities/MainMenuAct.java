@@ -24,6 +24,8 @@ public class MainMenuAct extends AppCompatActivity implements NavigationView.OnN
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_home);
+
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(R.id.frag_container,
                     new MainViewFrag()).commit();
@@ -41,6 +43,10 @@ public class MainMenuAct extends AppCompatActivity implements NavigationView.OnN
                 getSupportFragmentManager().beginTransaction().replace(R.id.frag_container,
                         new PlacesDisplayFrag()).addToBackStack(null).commit();
                 break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
