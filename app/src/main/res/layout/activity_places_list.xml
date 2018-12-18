@@ -4,39 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.PlacesListView"
     android:orientation="vertical"
+    tools:context=".Activities.MainMenuAct"
+
     >
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="60dp"
+        android:background="@color/navBack">
 
         <Button
             android:id="@+id/SearchButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="92dp"
-            android:layout_marginStart="92dp"
-            android:layout_marginTop="4dp"
-            android:text="@string/searchB"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:hint="Busqueda"
-            app:layout_constraintBottom_toBottomOf="@+id/SearchButton"
+            android:text="@string/searchB"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editSearch"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/SearchButton" />
+            app:layout_constraintHorizontal_bias="0.071"
+            app:layout_constraintStart_toEndOf="@+id/editSearch" />
+
+        <EditText
+            android:id="@+id/editSearch"
+            android:layout_width="212dp"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="8dp"
+            android:hint="Busqueda"
+            android:textColor="@color/white"
+            android:textColorHint="@color/whiteTransp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
     <include layout="@layout/places_recycler_view"></include>
 </LinearLayout>

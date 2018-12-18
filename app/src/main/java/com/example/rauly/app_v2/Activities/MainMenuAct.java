@@ -1,5 +1,6 @@
 package com.example.rauly.app_v2.Activities;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,9 +12,10 @@ import android.view.MenuItem;
 
 import com.example.rauly.app_v2.Fragments.MainViewFrag;
 import com.example.rauly.app_v2.Fragments.PlacesDisplayFrag;
+import com.example.rauly.app_v2.Interfaces.TextHandler;
 import com.example.rauly.app_v2.R;
 
-public class MainMenuAct extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainMenuAct extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, TextHandler{
 
     private DrawerLayout drawer;
 
@@ -50,5 +52,14 @@ public class MainMenuAct extends AppCompatActivity implements NavigationView.OnN
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void respond(String data) {
+        PlacesDisplayFrag placesDisplayFrag = new PlacesDisplayFrag();
+        Bundle bundle = new Bundle();
+        bundle.putString("dat", data);
+        placesDisplayFrag.setArguments(bundle);
+        getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, placesDisplayFrag).addToBackStack(null).commit();
     }
 }

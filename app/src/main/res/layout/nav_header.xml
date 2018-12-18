@@ -6,6 +6,7 @@
     android:background="@color/navBack"
     android:orientation="vertical"
     android:padding="16dp"
+    android:layout_marginTop="15dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
