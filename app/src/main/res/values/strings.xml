@@ -14,9 +14,9 @@
 
     <!-- Main Options -->
 
-    <string name="Op1_string">Categoria 1</string>
-    <string name="Op2_string">Categoria 2</string>
-    <string name="Op3_string">Categoria 3</string>
+    <string name="Op1_string">Cafesterias</string>
+    <string name="Op2_string">Comida internacional</string>
+    <string name="Op3_string">Comida y Entretenimiento</string>
     <string name="Op4_string">Categoria 4</string>
     <string name="Op5_string">Categoria 5</string>
     <string name="Op6_string">Categoria 6</string>

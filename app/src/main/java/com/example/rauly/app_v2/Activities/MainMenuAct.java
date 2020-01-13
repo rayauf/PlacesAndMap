@@ -55,10 +55,11 @@ public class MainMenuAct extends AppCompatActivity implements NavigationView.OnN
     }
 
     @Override
-    public void respond(String data) {
+    public void respond(String data, String category) {
         PlacesDisplayFrag placesDisplayFrag = new PlacesDisplayFrag();
         Bundle bundle = new Bundle();
         bundle.putString("dat", data);
+        bundle.putString("cat", category);
         placesDisplayFrag.setArguments(bundle);
         getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, placesDisplayFrag).addToBackStack(null).commit();
     }

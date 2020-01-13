@@ -18,6 +18,10 @@ import android.widget.Toast;
 import com.example.rauly.app_v2.Interfaces.TextHandler;
 import com.example.rauly.app_v2.R;
 
+import static com.example.rauly.app_v2.Constants.Categs.CAFETERIA;
+import static com.example.rauly.app_v2.Constants.Categs.ENTRETAIMENT;
+import static com.example.rauly.app_v2.Constants.Categs.INTERNATIONAL;
+
 public class MainViewFrag extends android.support.v4.app.Fragment{
 
     private TextView textHandler;
@@ -38,7 +42,7 @@ public class MainViewFrag extends android.support.v4.app.Fragment{
             @Override
             public void onClick(View v) {
                 textHandler = v.findViewById(R.id.cat1_string);
-                comm.respond(textHandler.getText().toString());
+                comm.respond(textHandler.getText().toString(), CAFETERIA);
             }
         });
 
@@ -46,35 +50,35 @@ public class MainViewFrag extends android.support.v4.app.Fragment{
             @Override
             public void onClick(View v) {
                 textHandler = v.findViewById(R.id.cat2_string);
-                comm.respond(textHandler.getText().toString());
+                comm.respond(textHandler.getText().toString(), INTERNATIONAL);
             }
         });
         op3.setOnClickListener(new CardView.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textHandler = v.findViewById(R.id.cat3_string);
-                comm.respond(textHandler.getText().toString());
+                comm.respond(textHandler.getText().toString(), ENTRETAIMENT);
             }
         });
         op4.setOnClickListener(new CardView.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textHandler = v.findViewById(R.id.cat4_string);
-                comm.respond(textHandler.getText().toString());
+                comm.respond(textHandler.getText().toString(), "");
             }
         });
         op5.setOnClickListener(new CardView.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textHandler = v.findViewById(R.id.cat5_string);
-                comm.respond(textHandler.getText().toString());
+                comm.respond(textHandler.getText().toString(), "");
             }
         });
         op6.setOnClickListener(new CardView.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textHandler = v.findViewById(R.id.cat6_string);
-                comm.respond(textHandler.getText().toString());
+                comm.respond(textHandler.getText().toString(), "");
             }
         });
 

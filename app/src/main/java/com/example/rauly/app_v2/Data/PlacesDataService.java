@@ -54,7 +54,101 @@ public class PlacesDataService {
                         Double latitude = det.getDouble("latitude");
                         Double longitude = det.getDouble("longitude");
 
-                        Places newPlace = new Places(id, placeName, latitude, longitude, avCost, openH, closeH);
+
+
+                        Places newPlace = new Places(id, placeName, latitude, longitude, avCost, openH, closeH, "");
+                        placesList.add(newPlace);
+
+                    }
+                } catch (JSONException e) {
+                    Log.v("JSON", "EXC" + e.getLocalizedMessage());
+                }
+                listener.success(true);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.v("api", "Error-------------------------------------------------------------------------------" + error.getLocalizedMessage());
+            }
+        });
+        Volley.newRequestQueue(context).add(getPlaces);
+        return placesList;
+    }
+
+    public ArrayList<Places> getPlacesbyCat(Context context, final PlacesDisplayFrag.placesDL listener, String cat){
+        String url = Constants.GET_PLACES_BY_CAT + cat;
+
+        final ArrayList<Places> placesList = new ArrayList<>();
+        final JsonArrayRequest getPlaces = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                System.out.println(response.toString());
+                try {
+                    JSONArray places = response;
+                    for (int i = 0; i < places.length(); i++) {
+                        JSONObject place = places.getJSONObject(i);
+                        String placeName = place.getString("name");
+                        String id = place.getString("_id");
+                        Double avCost = place.getDouble("avgCost");
+
+                        JSONObject horary = place.getJSONObject("horary");
+                        JSONObject details = horary.getJSONObject("details");
+                        String openH = details.getString("open");
+                        String closeH = details.getString("close");
+
+                        JSONObject coordinates = place.getJSONObject("coordinates");
+                        JSONObject det = coordinates.getJSONObject("details");
+                        Double latitude = det.getDouble("latitude");
+                        Double longitude = det.getDouble("longitude");
+
+                        Places newPlace = new Places(id, placeName, latitude, longitude, avCost, openH, closeH, "");
+                        placesList.add(newPlace);
+
+                    }
+                } catch (JSONException e) {
+                    Log.v("JSON", "EXC" + e.getLocalizedMessage());
+                }
+                listener.success(true);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.v("api", "Error-------------------------------------------------------------------------------" + error.getLocalizedMessage());
+            }
+        });
+        Volley.newRequestQueue(context).add(getPlaces);
+        return placesList;
+    }
+
+    public ArrayList<Places> getPlacesByHint(Context context, final PlacesDisplayFrag.placesDL listener, String hint){
+        String url = Constants.GET_PLACES_BY_HINT + hint;
+
+        final ArrayList<Places> placesList = new ArrayList<>();
+        final JsonArrayRequest getPlaces = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                System.out.println(response.toString());
+                try {
+                    JSONArray places = response;
+                    for (int i = 0; i < places.length(); i++) {
+                        JSONObject place = places.getJSONObject(i);
+                        String placeName = place.getString("name");
+                        String id = place.getString("_id");
+                        Double avCost = place.getDouble("avgCost");
+
+                        JSONObject horary = place.getJSONObject("horary");
+                        JSONObject details = horary.getJSONObject("details");
+                        String openH = details.getString("open");
+                        String closeH = details.getString("close");
+
+                        JSONObject coordinates = place.getJSONObject("coordinates");
+                        JSONObject det = coordinates.getJSONObject("details");
+                        Double latitude = det.getDouble("latitude");
+                        Double longitude = det.getDouble("longitude");
+
+
+
+                        Places newPlace = new Places(id, placeName, latitude, longitude, avCost, openH, closeH, "");
                         placesList.add(newPlace);
 
                     }
@@ -73,3 +167,4 @@ public class PlacesDataService {
         return placesList;
     }
 }
+

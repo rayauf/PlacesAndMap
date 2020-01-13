@@ -11,6 +11,8 @@ public class Places implements Parcelable{
     private Double avCost = 0.0;
     private String openH = "";
     private String closeH = "";
+    private String category = "";
+
 
     public String getId() {
         return id;
@@ -40,7 +42,11 @@ public class Places implements Parcelable{
         return closeH;
     }
 
-    public Places(String id, String name, Double latitude, Double longitude, Double avCost, String openH, String closeH) {
+    public String getCategory() {
+        return category;
+    }
+
+    public Places(String id, String name, Double latitude, Double longitude, Double avCost, String openH, String closeH, String category) {
         this.id = id;
         this.name = name;
         this.latitude = latitude;
@@ -48,6 +54,7 @@ public class Places implements Parcelable{
         this.avCost = avCost;
         this.openH = openH;
         this.closeH = closeH;
+        this.category = category;
     }
 
         //
@@ -59,6 +66,7 @@ public class Places implements Parcelable{
         avCost = in.readDouble();
         openH = in.readString();
         closeH = in.readString();
+        category = in.readString();
     }
 
     @Override
@@ -70,6 +78,7 @@ public class Places implements Parcelable{
         parcel.writeDouble(avCost);
         parcel.writeString(openH);
         parcel.writeString(closeH);
+        parcel.writeString(category);
     }
 
     @Override
